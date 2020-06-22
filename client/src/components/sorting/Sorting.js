@@ -9,10 +9,10 @@ const Page = (props) => {
     <div className="container">
       <br />
       <div className="row justify-content-center">
-        <div className="col-12 col-md-8">
+        <div className="col-11 col-md-8">
           <h1>Sorting Algorithms</h1>
         </div>
-        <div className="col-12 col-md-4 text-right">
+        <div className="col-11 col-md-4 text-right">
           <Dropdown
             algorithm={algorithm}
             onClick={updateAlgorithm}
@@ -31,11 +31,11 @@ const Page = (props) => {
       <br />
       <div className="row justify-content-center">
         {algorithm === 'Choose Algorithm' ? (
-          <div className="col-12 col-md-12">
+          <div className="col-11 col-md-12">
             <div>Select an algorithm to visualize</div>
           </div>
         ) : (
-          <div className="col-12 col-md-10">
+          <div className="col-11 col-md-10">
             <TabTable description="Description" algorithm={algorithm} />
           </div>
         )}
