@@ -1,0 +1,21 @@
+{
+  "name": "visualizecs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run start\" \"npm run client\" \"cd client && npm run watchSASS\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jake Waro",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "concurrency": "^0.1.4",
+    "concurrently": "^5.2.0",
+    "express": "^4.17.1",
+    "react-bootstrap": "^1.0.1"
+  }
+}
