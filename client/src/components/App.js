@@ -1,15 +1,18 @@
 import React from 'react';
 
-import Header from './Header';
-import {Router} from 'react-router';
+import { Router } from 'react-router';
+import { Route } from 'react-router-dom';
 import History from '../history';
-import Page from './Page'
+
+// components
+import Header from './Header';
+import Sorting from './sorting/Sorting';
 
 function App() {
   return (
-    <Router className='App' history={History}>
-      <Header/>
-      <Page />
+    <Router className="App" history={History}>
+      <Header />
+      <Route exact path="/" component={Sorting} />
     </Router>
   );
 }
