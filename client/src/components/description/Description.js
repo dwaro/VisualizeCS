@@ -1,7 +1,23 @@
 import React from 'react';
+import data from '../../data/sortingData.js';
 
 const getContent = (algo) => {
-  return <div>Content introduction placeholder</div>;
+  let keyCounter = 0;
+  return (
+    <div>
+      <ul>
+        <li>Runtime complexity: {data[algo].description.runtime}</li>
+        <li>Space complexity: {data[algo].description.space}</li>
+      </ul>
+      {data[algo].description.details.map((p) => {
+        return <p key={keyCounter++}>{p}</p>;
+      })}
+      <div className="codeSample">Code Sample</div>
+      <pre>
+        <code>{data[algo].code}</code>
+      </pre>
+    </div>
+  );
 };
 
 const getImage = (algo) => {
