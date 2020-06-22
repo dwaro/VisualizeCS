@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
+import Description from '../description/Description';
 
 const TabTable = (props) => {
   return (
@@ -7,7 +8,7 @@ const TabTable = (props) => {
       <Tab eventKey="description" title="Description">
         <div>
           <br />
-          <h1>{props.algorithm}</h1>
+          <Description algorithm={props.algorithm} />
         </div>
       </Tab>
       <Tab eventKey="visualize" title="Visualize">
