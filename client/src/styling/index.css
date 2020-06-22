@@ -9925,14 +9925,14 @@ h1 {
   letter-spacing: 2px;
 }
 
-pre {
-  background-color: #f0f0f0;
+.codeSample {
+  background-color: #d6deeb;
+  color: #011627;
+  padding: 10px;
 }
 
-.codeSample {
-  background-color: black;
-  color: white;
-  padding: 10px;
+.cLUmKH {
+  overflow: hidden !important;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -9,24 +9,22 @@ export default {
         'Bubble Sort is considered a slow sorting algorithm, suitable only for smaller data sizes. Bubble sort is a stable sorting algorithm.',
       ],
     },
-    code: `
-    public static void bubbleSort(int[] values) {
-        // n sweeps
-        for (int i = 0; i < values.length - 1; i++) {
+    code: `public static void bubbleSort(int[] values) {
+    // n sweeps
+    for (int i = 0; i < values.length - 1; i++) {
 
-            // compare adjacent neighbors up to (i - 1) position from the end
-            for (int j = 0; j < values.length - 1 - i; j++) {
+        // compare adjacent neighbors up to (i - 1) position from the end
+        for (int j = 0; j < values.length - 1 - i; j++) {
 
-                // swap values
-                if (values[j] > values[j + 1]) {
-                    int tmp = values[j+1];
-                    values[j+1] = values[j];
-                    values[j] = tmp;
-                }
+            // swap values
+            if (values[j] > values[j + 1]) {
+                int tmp = values[j+1];
+                values[j+1] = values[j];
+                values[j] = tmp;
             }
         }
     }
-    `,
+}`,
   },
   'Merge Sort': {
     description: {
@@ -37,5 +35,6 @@ export default {
         'This is usually regarded as a superior method to bubble, insertion, and selection sorts. However, it is important to note its space requirements, which could be worrisome for large data. Merge sort is a stable sorting method.',
       ],
     },
+    code: ``,
   },
 };
