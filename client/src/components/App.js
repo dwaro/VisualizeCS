@@ -5,7 +5,7 @@ import { Route } from 'react-router-dom';
 import History from '../history';
 
 // components
-import Header from './Header';
+import Header from './header/Header';
 import Sorting from './sorting/Sorting';
 
 function App() {

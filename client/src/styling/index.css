@@ -9910,11 +9910,15 @@ h3 {
   }
 }
 .header-bar {
-  background-color: black;
+  background-color: #011627;
   color: white;
   height: 75px;
   font-size: 30px;
   letter-spacing: 2px;
+}
+
+body {
+  color: #011627;
 }
 
 #CS {

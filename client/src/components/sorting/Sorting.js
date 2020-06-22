@@ -10,7 +10,7 @@ const Page = (props) => {
       <br />
       <div className="row justify-content-center">
         <div className="col-11 col-md-8">
-          <h1>Sorting Algorithms</h1>
+          <h1 style={{ color: 'rgb(150,150,150)' }}>Sorting Algorithms</h1>
         </div>
         <div className="col-11 col-md-4 text-right">
           <Dropdown
