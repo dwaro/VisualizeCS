@@ -5,7 +5,7 @@ const Dropdown = (props) => {
   let keyCounter = 0;
   return (
     <DD>
-      <DD.Toggle variant="warning" id="DD-basic">
+      <DD.Toggle variant="secondary" id="DD-basic">
         {props.algorithm}
       </DD.Toggle>
       <DD.Menu>

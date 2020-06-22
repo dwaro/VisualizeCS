@@ -9918,7 +9918,7 @@ h3 {
 }
 
 #CS {
-  color: orange;
+  color: #f78c6c;
 }
 
 h1 {
@@ -9933,6 +9933,12 @@ h1 {
 
 .cLUmKH {
   overflow: hidden !important;
+}
+
+#DD-basic {
+  background-color: #f78c6c;
+  color: white;
+  border-color: #f78c6c;
 }
 
 /*# sourceMappingURL=index.css.map */
