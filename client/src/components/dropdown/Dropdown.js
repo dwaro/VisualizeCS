@@ -13,6 +13,7 @@ const Dropdown = (props) => {
           return (
             <DD.Item
               key={keyCounter++}
+              id={`${selection.split(' ').join('')}-dropdown`}
               onClick={() => props.onClick(selection)}>
               {selection}
             </DD.Item>
