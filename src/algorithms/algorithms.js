@@ -10,7 +10,7 @@ exports.bubbleSort = function bubbleSort(data) {
     for (let j = 0; j < data.length - i - 1; j++) {
       if (data[j] > data[j + 1]) {
         swaps.push(
-          `Swap index [${j}], ${data[j]}, and index [${j + 1}], ${data[j + 1]}.`
+          `Swap index [${j}], ${data[j]}, and index [${j + 1}], ${data[j + 1]}`
         );
         const tmp = data[j];
         data[j] = data[j + 1];

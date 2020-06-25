@@ -3,6 +3,9 @@
 @import "../../node_modules/bootstrap/scss/functions"
 @import "../../node_modules/bootstrap/scss/mixins"
 
+$blue-text: rgb(130, 170, 255)
+$pink-text: rgb(247, 140, 108)
+
 .header-bar
     background-color: rgb(1, 22, 39)
     color: white
@@ -14,7 +17,7 @@ body
     color: rgb(1, 22, 39)
 
 #CS
-    color: rgb(247, 140, 108)
+    color: $pink-text
 
 h1
     letter-spacing: 2px
@@ -28,6 +31,25 @@ h1
     overflow: hidden !important
 
 #DD-basic
-    background-color: rgb(247, 140, 108)
+    background-color: $pink-text
     color: white
-    border-color: rgb(247, 140, 108)
+    border-color: $pink-text
+
+.step
+    background-color: rgb(1, 22, 39)
+    color: white
+    padding: 10px 20px
+    border-radius: 10px
+
+.blue-text
+    color: $blue-text
+
+.teal-text
+    color: rgb(127, 219, 202)
+
+.pink-text
+    color: $pink-text
+
+a
+    color: $pink-text
+    opacity: 1

@@ -37,7 +37,9 @@ const Visualize = (props) => {
       <div className="row justify-content-center">
         <input type="submit" onClick={() => onSubmit()} />
       </div>
-      {sorted.length > 0 ? <Steps data={sorted} steps={steps} /> : null}
+      {sorted.length > 0 ? (
+        <Steps data={sorted} raw={data} steps={steps} />
+      ) : null}
     </div>
   );
 };

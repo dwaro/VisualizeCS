@@ -9945,4 +9945,28 @@ h1 {
   border-color: #f78c6c;
 }
 
+.step {
+  background-color: #011627;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.blue-text {
+  color: #82aaff;
+}
+
+.teal-text {
+  color: #7fdbca;
+}
+
+.pink-text {
+  color: #f78c6c;
+}
+
+a {
+  color: #f78c6c;
+  opacity: 1;
+}
+
 /*# sourceMappingURL=index.css.map */
