@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tabs, Tab } from 'react-bootstrap';
 import Description from '../description/Description';
+import Visualize from '../visualize/Visualize';
 
 const TabTable = (props) => {
   return (
@@ -14,7 +15,7 @@ const TabTable = (props) => {
       <Tab eventKey="visualize" title="Visualize">
         <div>
           <br />
-          <h1>Visualize</h1>
+          <Visualize algorithm={props.algorithm} />
         </div>
       </Tab>
     </Tabs>

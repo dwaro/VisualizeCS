@@ -10,9 +10,12 @@ const Description = (props) => {
       <div>
         <ul>
           <li>
-            Runtime complexity: {data[props.algorithm].description.runtime}
+            <b>Runtime complexity</b>:{' '}
+            {data[props.algorithm].description.runtime}
           </li>
-          <li>Space complexity: {data[props.algorithm].description.space}</li>
+          <li>
+            <b>Space complexity</b>: {data[props.algorithm].description.space}
+          </li>
         </ul>
         {data[props.algorithm].description.details.map((p) => {
           return <p key={keyCounter++}>{p}</p>;
