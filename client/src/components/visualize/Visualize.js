@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Steps from '../steps/Steps';
 
 const Visualize = (props) => {
   const [data, setData] = useState([5, 67, 23, 45, 21]);
@@ -21,8 +22,6 @@ const Visualize = (props) => {
       });
   };
 
-  console.log(data);
-
   return (
     <div>
       <h3>Visualize {props.algorithm} on your data</h3>
@@ -38,6 +37,7 @@ const Visualize = (props) => {
       <div className="row justify-content-center">
         <input type="submit" onClick={() => onSubmit()} />
       </div>
+      {sorted.length > 0 ? <Steps data={sorted} steps={steps} /> : null}
     </div>
   );
 };

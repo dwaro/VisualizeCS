@@ -6,14 +6,12 @@ module.exports = (app) => {
     const algorithm = req.query.algorithm;
     let data = util.formatData(req.query.data);
 
-    let result = await sortController.delegate(algorithm, data);
-
-    console.log(result);
+    let result = sortController.delegate(algorithm, data);
 
     if (result) {
       res.send(result);
     } else {
-      res.status(401).send('Error');
+      res.status(403).send('Error');
     }
   });
 };
