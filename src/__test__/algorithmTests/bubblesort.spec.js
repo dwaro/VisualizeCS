@@ -1,33 +1,38 @@
 const { bubbleSort } = require('../../algorithms/algorithms');
 
 describe('Bubble Sort algorithm returns correct sorted data', () => {
+  let data = [];
+
+  beforeEach(() => {
+    data.length = 0;
+  });
+
   it('Empty input --> empty output', () => {
-    const data = [];
     const result = bubbleSort(data);
     expect(result.data).toEqual(data);
   });
 
   it('Odd length input', () => {
-    const data = [1];
+    data = [1];
     const result = bubbleSort(data);
-    expect(result.data).toEqual([1]);
+    expect(result.data).toEqual(data);
   });
 
   it('Even length input', () => {
-    const data = [2, 1];
+    data = [2, 1];
     const result = bubbleSort(data);
     expect(result.data).toEqual([1, 2]);
   });
 
   it('Effectively medium input -- 1', () => {
-    const data = buildData(999);
+    data = buildData(999);
     const result = bubbleSort(data);
     data.sort();
     expect(result.data).toEqual(data);
   });
 
   it('Effectively medium input -- 2', () => {
-    const data = buildData(1001);
+    data = buildData(1001);
     const result = bubbleSort(data);
     data.sort();
     expect(result.data).toEqual(data);
@@ -35,7 +40,7 @@ describe('Bubble Sort algorithm returns correct sorted data', () => {
 
   // caps somewhere between 5,000 - 10,000 array size
   it('Effectively large input -- 1', () => {
-    const data = buildData(4999);
+    data = buildData(4999);
     const result = bubbleSort(data);
     data.sort();
     expect(result.data).toEqual(data);
@@ -43,12 +48,18 @@ describe('Bubble Sort algorithm returns correct sorted data', () => {
 
   // caps somewhere between 5,000 - 10,000 array size
   it('Effectively large input -- 2', () => {
-    const data = buildData(5001);
+    data = buildData(5001);
     const result = bubbleSort(data);
     data.sort();
     expect(result.data).toEqual(data);
   });
 });
+
+// describe('Bubble Sort sorted string data', () => {
+
+// });
+
+//describe('Bubble sort correctly details swaps during its sort', () => {});
 
 const buildData = (size) => {
   let data = [];
