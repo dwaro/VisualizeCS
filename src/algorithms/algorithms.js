@@ -2,6 +2,10 @@
 //   [[swaps],[current_data_state]]
 // ];
 
+/**
+ * This method implements bubble sort to sort its input data.
+ * @param {*} data
+ */
 exports.bubbleSort = function bubbleSort(data) {
   let steps = [];
 

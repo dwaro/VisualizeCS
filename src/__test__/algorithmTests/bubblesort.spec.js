@@ -55,9 +55,32 @@ describe('Bubble Sort algorithm returns correct sorted data', () => {
   });
 });
 
-// describe('Bubble Sort sorted string data', () => {
+describe('Bubble Sort sorted string data', () => {
+  let data = [];
 
-// });
+  beforeEach(() => {
+    data.length = 0;
+  });
+
+  it('Odd length str input', () => {
+    data = ['Jake'];
+    const result = bubbleSort(data);
+    expect(result.data).toEqual(['Jake']);
+  });
+
+  it('Even length str input', () => {
+    data = ['Jake', 'Bob'];
+    const result = bubbleSort(data);
+    expect(result.data).toEqual(['Bob', 'Jake']);
+  });
+
+  it('2+ length str input', () => {
+    data = ['Jake', 'Bob', 'Elsa', 'Abe', 'Zoe', 'Hank', 'Sam', 'Ray'];
+    const result = bubbleSort(data);
+    data.sort();
+    expect(result.data).toEqual(data);
+  });
+});
 
 //describe('Bubble sort correctly details swaps during its sort', () => {});
 
