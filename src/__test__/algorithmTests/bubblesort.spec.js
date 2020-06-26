@@ -75,7 +75,18 @@ describe('Bubble Sort sorted string data', () => {
   });
 
   it('2+ length str input', () => {
-    data = ['Jake', 'Bob', 'Elsa', 'Abe', 'Zoe', 'Hank', 'Sam', 'Ray'];
+    data = [
+      'Jake',
+      'Bob',
+      'Elsa',
+      'Abe',
+      '23',
+      'Zoe',
+      'Hank',
+      'Sam',
+      'Ray',
+      '562',
+    ];
     const result = bubbleSort(data);
     data.sort();
     expect(result.data).toEqual(data);
