@@ -5,13 +5,18 @@ const Visualize = (props) => {
   const [data, setData] = useState([5, 67, 23, 45, 21]);
   const [sorted, setSorted] = useState([]);
   const [steps, setSteps] = useState([]);
+  const [radio, setRadio] = useState('string');
 
   const onChange = (data) => {
     setData(data.target.value);
   };
 
   const onSubmit = async () => {
-    fetch(`/api/sort?algorithm=${props.algorithm}&data=${data.toString()}`)
+    fetch(
+      `/api/sort?algorithm=${
+        props.algorithm
+      }&type=${radio}&data=${data.toString()}`
+    )
       .then((res) => res.json()) // Transform the data into json
       .then((res) => {
         setSorted(res.data);
@@ -20,6 +25,10 @@ const Visualize = (props) => {
       .catch((err) => {
         console.log('Error occured');
       });
+  };
+
+  const onRadioClick = (type) => {
+    setRadio(type);
   };
 
   return (
@@ -33,6 +42,32 @@ const Visualize = (props) => {
           defaultValue="Enter your data here, with each value separated by a comma. For example: 5, 67, 23, 45, 21"
           onChange={(e) => onChange(e)}
         />
+      </div>
+      <div className="row justify-content-center">
+        <span style={{ fontWeight: 'bold', paddingRight: 10 }}>
+          Process as:{' '}
+        </span>{' '}
+        <label for="string">String</label>
+        <input
+          type="radio"
+          id="string"
+          name="type"
+          value=""
+          className="radio"
+          defaultChecked
+          onClick={() => onRadioClick('string')}
+        />
+        <br />
+        <label for="number">Number</label>
+        <input
+          type="radio"
+          id="number"
+          name="type"
+          value=""
+          className="radio"
+          onClick={() => onRadioClick('number')}
+        />
+        <br />
       </div>
       <div className="row justify-content-center">
         <input type="submit" onClick={() => onSubmit()} />
