@@ -14,7 +14,7 @@ const Page = (props) => {
         </div>
         <div className="col-11 col-md-4 text-right">
           <Dropdown
-            algorithm={algorithm}
+            defaultLabel={algorithm}
             onClick={updateAlgorithm}
             class="pink-bg"
             data={[

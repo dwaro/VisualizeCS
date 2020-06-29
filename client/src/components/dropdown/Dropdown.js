@@ -18,7 +18,7 @@ const Dropdown = (props) => {
   return (
     <DD>
       <DD.Toggle variant="secondary" id="DD-basic" style={style}>
-        {props.algorithm}
+        {props.defaultLabel}
       </DD.Toggle>
       <DD.Menu>
         {props.data.map((selection) => {

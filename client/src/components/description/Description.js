@@ -26,7 +26,7 @@ const Description = (props) => {
           <div className="col-8 d-flex align-items-center">Code Sample</div>
           <div className="col-4 d-flex justify-content-end">
             <Dropdown
-              algorithm={language}
+              defaultLabel={language}
               onClick={updateLanguage}
               data={['java', 'javascript']}
               class="teal-bg"
