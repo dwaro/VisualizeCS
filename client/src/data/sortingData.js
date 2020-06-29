@@ -9,7 +9,8 @@ export default {
         'Bubble Sort is considered a slow sorting algorithm, suitable only for smaller data sizes. Bubble sort is a stable sorting algorithm.',
       ],
     },
-    code: `public static void bubbleSort(int[] values) {
+    code: {
+      java: `public static void bubbleSort(int[] values) {
     // n sweeps
     for (int i = 0; i < values.length - 1; i++) {
 
@@ -25,6 +26,23 @@ export default {
         }
     }
 }`,
+      javascript: `function bubbleSort(data) {
+    // n sweeps
+    for (let i = 0; i < data.length - 1; i++) {
+
+        // compare adjacent neighbors up to (i - 1) position from the end
+        for (let j = 0; j < data.length - i - 1; j++) {
+          
+            // swap values
+            if (data[j] > data[j + 1]) {
+                const tmp = data[j];
+                data[j] = data[j + 1];
+                data[j + 1] = tmp;
+            }
+        }
+    }
+};`,
+    },
   },
   'Merge Sort': {
     description: {

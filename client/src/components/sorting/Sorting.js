@@ -16,6 +16,7 @@ const Page = (props) => {
           <Dropdown
             algorithm={algorithm}
             onClick={updateAlgorithm}
+            class="pink-bg"
             data={[
               'Bubble Sort',
               'Merge Sort',

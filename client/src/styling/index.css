@@ -9933,6 +9933,7 @@ h1 {
   background-color: #d6deeb;
   color: #011627;
   padding: 10px;
+  margin: 0px 0px;
 }
 
 .cLUmKH {
@@ -9940,9 +9941,7 @@ h1 {
 }
 
 #DD-basic {
-  background-color: #f78c6c;
   color: white;
-  border-color: #f78c6c;
 }
 
 .step {
@@ -9960,8 +9959,18 @@ h1 {
   color: #7fdbca;
 }
 
+.teal-bg {
+  background-color: #7fdbca;
+  border-color: #7fdbca;
+}
+
 .pink-text {
   color: #f78c6c;
+}
+
+.pink-bg {
+  background-color: #f78c6c;
+  border-color: #f78c6c;
 }
 
 a {

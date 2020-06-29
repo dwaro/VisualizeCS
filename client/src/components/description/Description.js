@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import data from '../../data/sortingData.js';
 import CodeSample from '../codeSample/CodeSample';
+import Dropdown from '../dropdown/Dropdown';
 
 const Description = (props) => {
+  const [language, updateLanguage] = useState('java');
   let keyCounter = 0;
   return (
     <div>
@@ -20,8 +22,21 @@ const Description = (props) => {
         {data[props.algorithm].description.details.map((p) => {
           return <p key={keyCounter++}>{p}</p>;
         })}
-        <div className="codeSample">Code Sample</div>
-        <CodeSample data={data[props.algorithm].code} language="java" />
+        <div className="row codeSample">
+          <div className="col-8 d-flex align-items-center">Code Sample</div>
+          <div className="col-4 d-flex justify-content-end">
+            <Dropdown
+              algorithm={language}
+              onClick={updateLanguage}
+              data={['java', 'javascript']}
+              class="teal-bg"
+            />
+          </div>
+        </div>
+        <CodeSample
+          data={data[props.algorithm].code[language]}
+          language={language}
+        />
       </div>
     </div>
   );

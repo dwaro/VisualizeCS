@@ -3,9 +3,21 @@ import { Dropdown as DD } from 'react-bootstrap';
 
 const Dropdown = (props) => {
   let keyCounter = 0;
+
+  let style =
+    props.class === 'pink-bg'
+      ? {
+          backgroundColor: 'rgb(247, 140, 108)',
+          borderColor: 'rgb(247, 140, 108)',
+        }
+      : {
+          backgroundColor: 'rgb(1, 22, 39)',
+          borderColor: 'rgb(1, 22, 39)',
+        };
+
   return (
     <DD>
-      <DD.Toggle variant="secondary" id="DD-basic">
+      <DD.Toggle variant="secondary" id="DD-basic" style={style}>
         {props.algorithm}
       </DD.Toggle>
       <DD.Menu>
