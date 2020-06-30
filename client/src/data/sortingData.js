@@ -53,7 +53,10 @@ export default {
         'This is usually regarded as a superior method to bubble, insertion, and selection sorts. However, it is important to note its space requirements, which could be worrisome for large data. Merge sort is a stable sorting method.',
       ],
     },
-    code: ``,
+    code: {
+      java: `Java code to come.`,
+      javascript: `JavaScript code to come.`,
+    },
   },
   'Selection Sort': {
     description: {
@@ -64,7 +67,8 @@ export default {
         'On average, selection sort requires less swaps than bubble sort or insertion sort; however, it is still an inefficient sorting algorithm. Also note, that the algorithm can be implemented in reverse, putting the smallest at the beginning of the array and building the array forward.',
       ],
     },
-    code: `public static void selectionSort(int[] values) {
+    code: {
+      java: `public static void selectionSort(int[] values) {
     // n - 1 sweeps
     for (int i = 0; i < values.length - 1; i++) {
         
@@ -84,6 +88,8 @@ export default {
         values[max] = tmp;
     }   
 }`,
+      javascript: `JavaScript code to come.`,
+    },
   },
   'Radix Sort': {
     description: {
@@ -98,7 +104,8 @@ export default {
         '--> 3rd pass (sort by 100s place) [4, 12, 34, 46, 52, 59, 77, 98, 105, 132, 260] --> sorted',
       ],
     },
-    code: `public static void radixSort(int[] values) {
+    code: {
+      java: `public static void radixSort(int[] values) {
     if (values != null && values.length > 1) {
         int max = getMax(values);
 
@@ -149,5 +156,7 @@ public static void radixSort(int[] values, int passes) {
             values[z] = tmp[z];
     }
 }`,
+      javascript: `JavaScript code to come`,
+    },
   },
 };
