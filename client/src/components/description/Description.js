@@ -5,6 +5,13 @@ import CodeSample from '../codeSample/CodeSample';
 import Dropdown from '../dropdown/Dropdown';
 import Image from '../image/Image';
 
+/**
+ * This function returns the Description component, which is used for
+ * displaying the details, code, and images related to a chosen algorithm.
+ *
+ * @param {Object} props - Object of properties passed to Description from the TabTable component
+ * @param {string} props.algorithm - the selected algorithm chosen by the user from the Dropdown component
+ */
 const Description = (props) => {
   const [language, updateLanguage] = useState('java');
 
