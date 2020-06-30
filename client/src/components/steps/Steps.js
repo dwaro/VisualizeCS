@@ -1,16 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 const Steps = (props) => {
   let stepCount = 1;
   let keyCounter = 0;
-  let numSwaps = (function () {
-    let count = 0;
-    for (let step of props.steps) {
-      let steps = step[0];
-      count += steps.length;
-    }
-    return count;
-  })();
 
   return (
     <div style={{ margin: '40px 0px' }}>
@@ -21,7 +14,7 @@ const Steps = (props) => {
         : <span className="pink-text">[</span> {props.raw}{' '}
         <span className="pink-text">]</span>
         <ul>
-          <li>Total number of swaps: {numSwaps}</li>
+          <li>Total number of swaps: {props.sortedData.numSwaps}</li>
         </ul>
       </div>
       {props.steps.map((step) => {
@@ -63,4 +56,8 @@ const Steps = (props) => {
   );
 };
 
-export default Steps;
+function mapStateToProps({ sortedData }) {
+  return { sortedData };
+}
+
+export default connect(mapStateToProps, null)(Steps);

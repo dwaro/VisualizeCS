@@ -1,1 +1,1 @@
-export const FETCH_ALGORITHM = 'fetch_algorithm';
+export const SORT_DATA = 'SORT_DATA';

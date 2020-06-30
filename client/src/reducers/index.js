@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import activeAlgorithmReducer from './activeAlgorithmReducer';
+import sortedData from './sortedData';
 
 export default combineReducers({
-  activeAlgorithm: activeAlgorithmReducer,
+  sortedData,
 });

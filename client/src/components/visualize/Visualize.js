@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../../actions';
 import Steps from '../steps/Steps';
 
 const Visualize = (props) => {
   const [data, setData] = useState([5, 67, 23, 45, 21]);
-  const [sorted, setSorted] = useState([]);
-  const [steps, setSteps] = useState([]);
   const [radio, setRadio] = useState('string');
 
   const onChange = (data) => {
@@ -12,19 +12,9 @@ const Visualize = (props) => {
   };
 
   const onSubmit = async () => {
-    fetch(
-      `/api/sort?algorithm=${
-        props.algorithm
-      }&type=${radio}&data=${data.toString()}`
-    )
-      .then((res) => res.json()) // Transform the data into json
-      .then((res) => {
-        setSorted(res.data);
-        setSteps(res.steps);
-      })
-      .catch((err) => {
-        console.log('Error occured');
-      });
+    await props.sortData(
+      `algorithm=${props.algorithm}&type=${radio}&data=${data.toString()}`
+    );
   };
 
   const onRadioClick = (type) => {
@@ -47,7 +37,7 @@ const Visualize = (props) => {
         <span style={{ fontWeight: 'bold', paddingRight: 10 }}>
           Process as:{' '}
         </span>{' '}
-        <label for="string">String</label>
+        <label htmlFor="string">String</label>
         <input
           type="radio"
           id="string"
@@ -58,7 +48,7 @@ const Visualize = (props) => {
           onClick={() => onRadioClick('string')}
         />
         <br />
-        <label for="number">Number</label>
+        <label htmlFor="number">Number</label>
         <input
           type="radio"
           id="number"
@@ -72,11 +62,19 @@ const Visualize = (props) => {
       <div className="row justify-content-center">
         <input type="submit" onClick={() => onSubmit()} />
       </div>
-      {sorted.length > 0 ? (
-        <Steps data={sorted} raw={data} steps={steps} />
+      {props.sortedData !== null && props.sortedData.data.length > 0 ? (
+        <Steps
+          data={props.sortedData.data}
+          raw={data}
+          steps={props.sortedData.steps}
+        />
       ) : null}
     </div>
   );
 };
 
-export default Visualize;
+function mapStateToProps({ sortedData }) {
+  return { sortedData };
+}
+
+export default connect(mapStateToProps, actions)(Visualize);
