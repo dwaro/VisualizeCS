@@ -4,7 +4,7 @@ export default {
       runtime: 'O(n²)',
       space: 'O(1)',
       details: [
-        "Bubble Sort entails moving through an array, and swapping pairs of adjacent elements. First, we compare elements. at positions 0 and 1. If element at 0 is greater than the element in position 1, we swap the elements. Next, we compare elements at positions 1 and 2. This continues until the end of the array, and bubble sort requires n sweeps of the array to guarantee it's sorted. After each sweep, we start at the beginning of the array and repeat the comparisons.",
+        "Bubble Sort entails moving through an array, and swapping pairs of adjacent elements. First, we compare elements at positions 0 and 1. If element at 0 is greater than the element in position 1, we swap the elements. Next, we compare elements at positions 1 and 2. This continues until the end of the array, and bubble sort requires n sweeps of the array to guarantee it's sorted. After each sweep, we start at the beginning of the array and repeat the comparisons.",
         'After the first sweep, we are guaranteed the largest element is placed at the end of the array. After the second sweep, we are guaranteed the second largest element is placed second from the end of the array and so on.',
         'Bubble Sort is considered a slow sorting algorithm, suitable only for smaller data sizes. Bubble sort is a stable sorting algorithm.',
       ],
