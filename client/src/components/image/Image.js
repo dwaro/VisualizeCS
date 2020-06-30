@@ -15,6 +15,7 @@ const Image = (props) => {
     <img
       style={{ margin: 10 }}
       src={getImage(props.algorithm)}
+      id="desc-img"
       alt="example algorithm"
     />
   );
