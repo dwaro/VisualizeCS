@@ -11,13 +11,13 @@ const Steps = (props) => {
         <span className="blue-text" style={{ fontSize: '1.5rem' }}>
           Starting data
         </span>
-        : <span className="pink-text">[</span> {props.raw}{' '}
+        : <span className="pink-text">[</span> {props.sortedData.raw.join(', ')}{' '}
         <span className="pink-text">]</span>
         <ul>
           <li>Total number of swaps: {props.sortedData.numSwaps}</li>
         </ul>
       </div>
-      {props.steps.map((step) => {
+      {props.sortedData.steps.map((step) => {
         return (
           <div
             className="step"
@@ -38,16 +38,8 @@ const Steps = (props) => {
             <div style={{ paddingLeft: 40 }}>
               <span className="teal-text">Data</span> at the end of pass{' '}
               <span className="teal-text">{stepCount++}</span>:{' '}
-              <span className="pink-text">[</span>{' '}
-              {step[1].map((val) => {
-                return (
-                  <span key={keyCounter++}>
-                    {val}
-                    <span className="teal-text">, </span>
-                  </span>
-                );
-              })}
-              <span className="pink-text">]</span>
+              <span className="pink-text">[</span> {step[1].join(', ')}
+              <span className="pink-text"> ]</span>
             </div>
           </div>
         );

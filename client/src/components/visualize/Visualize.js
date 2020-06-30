@@ -63,11 +63,7 @@ const Visualize = (props) => {
         <input type="submit" onClick={() => onSubmit()} />
       </div>
       {props.sortedData !== null && props.sortedData.data.length > 0 ? (
-        <Steps
-          data={props.sortedData.data}
-          raw={data}
-          steps={props.sortedData.steps}
-        />
+        <Steps />
       ) : null}
     </div>
   );

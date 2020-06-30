@@ -7,6 +7,7 @@
  * @param {*} data
  */
 exports.bubbleSort = function bubbleSort(data) {
+  const raw = data.slice();
   let steps = [];
 
   for (let i = 0; i < data.length - 1; i++) {
@@ -26,5 +27,5 @@ exports.bubbleSort = function bubbleSort(data) {
     steps.push(step);
   }
 
-  return { data, steps };
+  return { data, steps, raw };
 };
