@@ -9997,4 +9997,19 @@ hr {
   background-color: white;
 }
 
+.pill {
+  padding: 12px;
+  font-size: 1rem;
+  margin: 15px 5px 0px 0px;
+  letter-spacing: 1px;
+  background-color: #011627;
+  color: white;
+  font-weight: normal;
+}
+@media screen and (max-width: 767px) {
+  .pill {
+    margin: 5px;
+  }
+}
+
 /*# sourceMappingURL=index.css.map */

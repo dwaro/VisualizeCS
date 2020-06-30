@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import { Button } from 'react-bootstrap';
 import * as actions from '../../actions';
 import Steps from '../steps/Steps';
 
@@ -60,7 +61,11 @@ const Visualize = (props) => {
         <br />
       </div>
       <div className="row justify-content-center">
-        <input type="submit" onClick={() => onSubmit()} />
+        <Button
+          onClick={() => onSubmit()}
+          style={{ backgroundColor: 'rgb(1, 22, 39)' }}>
+          Submit
+        </Button>
       </div>
       {props.sortedData !== null && props.sortedData.data.length > 0 ? (
         <Steps />
