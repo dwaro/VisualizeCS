@@ -11,7 +11,7 @@ export default {
     },
     code: {
       java: `public static void bubbleSort(int[] values) {
-    // n sweeps
+    // n - 1 sweeps
     for (int i = 0; i < values.length - 1; i++) {
 
         // compare adjacent neighbors up to (i - 1) position from the end
@@ -27,7 +27,7 @@ export default {
     }
 }`,
       javascript: `function bubbleSort(data) {
-    // n sweeps
+    // n - 1 sweeps
     for (let i = 0; i < data.length - 1; i++) {
 
         // compare adjacent neighbors up to (i - 1) position from the end

@@ -9929,6 +9929,13 @@ h1 {
   letter-spacing: 2px;
 }
 
+p {
+  line-height: 30px;
+  background-color: whitesmoke;
+  padding: 15px;
+  border-radius: 10px;
+}
+
 .codeSample {
   background-color: #d6deeb;
   color: #011627;
@@ -9980,6 +9987,14 @@ a {
 
 .radio {
   margin: 6px 20px 6px 6px;
+}
+
+hr {
+  border-top: 5px solid #011627;
+}
+
+.jumbotron {
+  background-color: white;
 }
 
 /*# sourceMappingURL=index.css.map */
