@@ -64,7 +64,7 @@ export default {
       space: 'O(1)',
       details: [
         'An easy way to describe selection sort is that it is sorting the array backwards. In the first pass, we select the largest element and place it at the end of the array. For the second pass, we then find the largest element in the array from index 0 up to second last position of the array, and place it at the second to last position of the array. We repeat this for n - 1 sweeps to guarantee the array is sorted.',
-        'On average, selection sort requires less swaps than bubble sort or insertion sort; however, it is still an inefficient sorting algorithm. Also note, that the algorithm can be implemented in reverse, putting the smallest at the beginning of the array and building the array forward.',
+        'On average, selection sort requires less swaps than bubble sort or insertion sort, and generally performs much faster than the two; however, it is still an inefficient sorting algorithm. Also note, that the algorithm can be implemented in reverse, putting the smallest at the beginning of the array and building the array forward.',
       ],
     },
     code: {
