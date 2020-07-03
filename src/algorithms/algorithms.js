@@ -70,7 +70,7 @@ exports.selectionSort = function selectionSort(data) {
       numSwaps++;
 
       // swap max element to the end of unsorted array
-      let tmp = data[i];
+      const tmp = data[i];
       data[i] = data[max];
       data[max] = tmp;
     }

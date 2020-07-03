@@ -5,7 +5,13 @@ module.exports = (app) => {
   app.get('/api/sort', async (req, res) => {
     const algorithm = req.query.algorithm;
     const type = req.query.type;
-    let data = util.formatData(req.query.data, type);
+
+    let data;
+    try {
+      data = util.formatData(req.query.data, type);
+    } catch (err) {
+      res.status(400).send(`Error treating data as type ${type}`);
+    }
 
     let result = sortController.delegate(algorithm, data);
 

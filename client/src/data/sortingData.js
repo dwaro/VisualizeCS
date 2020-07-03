@@ -10,38 +10,38 @@ export default {
       ],
     },
     code: {
-      java: `public static void bubbleSort(int[] values) {
-    // n - 1 sweeps
-    for (int i = 0; i < values.length - 1; i++) {
+      java: `public static void bubbleSort(int[] data) {
+  // n - 1 sweeps
+  for (int i = 0; i < data.length - 1; i++) {
 
-        // compare adjacent neighbors up to (i - 1) position from the end
-        for (int j = 0; j < values.length - 1 - i; j++) {
+    // compare adjacent neighbors up to (i - 1) position from the end
+    for (int j = 0; j < data.length - 1 - i; j++) {
 
-            // swap values
-            if (values[j] > values[j + 1]) {
-                int tmp = values[j+1];
-                values[j+1] = values[j];
-                values[j] = tmp;
-            }
-        }
+      // swap values
+      if (data[j] > data[j + 1]) {
+        int tmp = data[j+1];
+        data[j+1] = data[j];
+        data[j] = tmp;
+      }
     }
+  }
 }`,
       javascript: `function bubbleSort(data) {
-    // n - 1 sweeps
-    for (let i = 0; i < data.length - 1; i++) {
+  // n - 1 sweeps
+  for (let i = 0; i < data.length - 1; i++) {
 
-        // compare adjacent neighbors up to (i - 1) position from the end
-        for (let j = 0; j < data.length - i - 1; j++) {
-          
-            // swap values
-            if (data[j] > data[j + 1]) {
-                const tmp = data[j];
-                data[j] = data[j + 1];
-                data[j + 1] = tmp;
-            }
-        }
+    // compare adjacent neighbors up to (i - 1) position from the end
+    for (let j = 0; j < data.length - i - 1; j++) {
+      
+      // swap values
+      if (data[j] > data[j + 1]) {
+        const tmp = data[j];
+        data[j] = data[j + 1];
+        data[j + 1] = tmp;
+      }
     }
-};`,
+  }
+}`,
     },
   },
   'Merge Sort': {
@@ -68,27 +68,50 @@ export default {
       ],
     },
     code: {
-      java: `public static void selectionSort(int[] values) {
-    // n - 1 sweeps
-    for (int i = 0; i < values.length - 1; i++) {
-        
-        // index of max element in unsorted portion of the array 
-        int max = 0;
+      java: `public static void selectionSort(int[] data) {
+  // n - 1 sweeps
+  for (int i = data.length - 1; i > 0; i--) {
+    
+    // index of max element in unsorted portion of the array 
+    int max = 0;
 
-        // compare if we have a new max
-        for (int j = 0; j < values.length - 1 - i; j++) {
-            if (values[j] > values[max]) {
-                max = j;
-            }
+    // compare if we have a new max
+    for (int j = 0; j <= i; j++) {
+        if (data[j] > data[max]) {
+            max = j;
         }
-        
-        // swap max element to the end of unsorted array
-        int tmp = values[values.length - 1 - i];
-        values[values.length - 1 - i] = values[max];
-        values[max] = tmp;
-    }   
+    }
+    
+    // swap max element to the end of unsorted array
+    if (max != i) {
+      int tmp = data[i];
+      data[i] = data[max];
+      data[max] = tmp;
+    }
+  }   
 }`,
-      javascript: `JavaScript code to come.`,
+      javascript: `function selectionSort(data) {
+  // n - 1 sweeps
+  for (let i = data.length - 1; i > 0; i--) {
+    
+    // index of max element in unsorted portion of the array
+    let max = 0;
+
+    // compare if we have a new max
+    for (let j = 0; j <= i; j++) {
+      if (data[j] > data[max]) {
+        max = j;
+      }
+    }
+
+    // swap if max element isn't already in place.
+    if (max !== i) {
+      const tmp = data[i];
+      data[i] = data[max];
+      data[max] = tmp;
+    }
+  }
+}`,
     },
   },
   'Radix Sort': {
