@@ -9,6 +9,7 @@
 exports.bubbleSort = function bubbleSort(data) {
   const raw = data.slice();
   let steps = [];
+  let numSwaps = 0;
 
   for (let i = 0; i < data.length - 1; i++) {
     let swaps = [];
@@ -17,6 +18,7 @@ exports.bubbleSort = function bubbleSort(data) {
         swaps.push(
           `Swap index [${j}], ${data[j]}, and index [${j + 1}], ${data[j + 1]}`
         );
+        numSwaps++;
         const tmp = data[j];
         data[j] = data[j + 1];
         data[j + 1] = tmp;
@@ -27,5 +29,5 @@ exports.bubbleSort = function bubbleSort(data) {
     steps.push(step);
   }
 
-  return { data, steps, raw };
+  return { data, steps, raw, numSwaps };
 };
