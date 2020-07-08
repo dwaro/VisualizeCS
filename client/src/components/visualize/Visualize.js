@@ -7,15 +7,18 @@ import Steps from '../steps/Steps';
 const Visualize = (props) => {
   const [data, setData] = useState([5, 67, 23, 45, 21]);
   const [radio, setRadio] = useState('string');
+  const [showSteps, setShowSteps] = useState(false);
 
   const onChange = (data) => {
     setData(data.target.value);
   };
 
   const onSubmit = async () => {
+    setShowSteps(false);
     await props.sortData(
       `algorithm=${props.algorithm}&type=${radio}&data=${data.toString()}`
     );
+    setShowSteps(true);
   };
 
   const onRadioClick = (type) => {
@@ -67,7 +70,9 @@ const Visualize = (props) => {
           Submit
         </Button>
       </div>
-      {props.sortedData !== null && props.sortedData.data.length > 0 ? (
+      {showSteps &&
+      props.sortedData !== null &&
+      props.sortedData.data.length > 0 ? (
         <Steps />
       ) : null}
     </div>

@@ -10018,4 +10018,35 @@ hr {
   max-width: 700px;
 }
 
+.step-appear {
+  opacity: 0;
+}
+
+.step-appear.step-appear-active {
+  opacity: 1;
+  transition: opacity 900ms linear;
+}
+
+.step-exit {
+  opacity: 1;
+}
+
+.step-exit.step-exit-active {
+  opacity: 0;
+  transition: opacity 900ms linear;
+}
+
+.step-exit-done {
+  opacity: 0;
+}
+
+.step-enter {
+  opacity: 0;
+}
+
+.step-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 900ms linear;
+}
+
 /*# sourceMappingURL=index.css.map */
