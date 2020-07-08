@@ -1,6 +1,6 @@
 const formatData = (raw, type) => {
-  let data = raw.split(' ').join('');
-  data = data.split(',');
+  let data = raw.split(',').join(' ').split(' ');
+  data = data.filter((val) => val !== '');
 
   // if the first value is a number, we'll change to numbers
   if (type === 'number') {
