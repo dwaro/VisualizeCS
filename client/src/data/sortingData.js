@@ -182,4 +182,19 @@ public static void radixSort(int[] values, int passes) {
       javascript: `JavaScript code to come`,
     },
   },
+  'Counting Sort': {
+    description: {
+      runtime:
+        'O(n + c) where n is the number of elements and c is the size of the domain array.',
+      space: 'O(c) where c is the size of the domain array',
+      details: [
+        "Counting sort is a sorting algorithm that is used when we know the values of our data will be constrained to a relatively small domain. For example, if we wanted to sort a list of peoples' ages, we know that we could reasonably capture all ages by assuming every age is less than 150. That means, we only need a counting sort array c, of size 150.",
+        'The trick is to hold a count at each array index that corresponds to a value. So if we had a list of ages [ 15, 26, 17, 90, 67, 20, 15 ], our counting sort array would ........... more description to come',
+      ],
+    },
+    code: {
+      java: 'Java code for Counting Sort to come!',
+      javascript: 'JavaScript code for Counting Sort to come!',
+    },
+  },
 };
