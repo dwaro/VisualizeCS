@@ -82,17 +82,59 @@ describe('Counting sort correclty handles 1-sized strings or character data', ()
     data.length = 0;
   });
 
-  fit('String: 1-size array', () => {
+  it('String: 1-size array', () => {
     data = ['t'];
     let result = countingSort(data);
     expect(result).toEqual(['t']);
   });
 
-  fit('String: 2-size array', () => {
+  it('String: 2-size array', () => {
     data = ['t', 'A'];
     let result = countingSort(data);
-    console.log(result);
     expect(result).toEqual(['A', 't']);
+  });
+
+  it('String: 9-size array', () => {
+    data = ['t', 'A', '2', '9', 'a', '1', 'E', 'B', 'p'];
+    let result = countingSort(data);
+    data.sort();
+    expect(result).toEqual(data);
+  });
+
+  it('String: 28-size array', () => {
+    data = [
+      't',
+      'A',
+      '2',
+      '9',
+      'a',
+      't',
+      'A',
+      'k',
+      '2',
+      '9',
+      'a',
+      '1',
+      'E',
+      'B',
+      'p',
+      '1',
+      'E',
+      'B',
+      'p',
+      't',
+      'A',
+      '2',
+      '9',
+      'a',
+      '1',
+      'E',
+      'B',
+      'p',
+    ];
+    let result = countingSort(data);
+    data.sort();
+    expect(result).toEqual(data);
   });
 });
 

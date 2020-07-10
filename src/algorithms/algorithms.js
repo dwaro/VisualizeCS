@@ -93,16 +93,20 @@ exports.countingSort = function countingSort(data) {
   } else {
     counts.length = 128;
 
-    for (let val of data) counts[val.charCodeAt(0) - 1]++;
+    for (let val of data) {
+      if (counts[val.charCodeAt(0)] === undefined)
+        counts[val.charCodeAt(0)] = 1;
+      else counts[val.charCodeAt(0)]++;
+    }
 
     let result = [];
     let pos = 0;
     for (let i = 0; i < data.length; i++) {
-      while (counts[pos] === undefined) {
+      while (counts[pos] === undefined || counts[pos] === 0) {
         pos++;
       }
 
-      result.push(String.fromCharCode(pos + 1));
+      result.push(String.fromCharCode(pos));
       counts[pos]--;
     }
 
