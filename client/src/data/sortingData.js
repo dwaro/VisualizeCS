@@ -185,12 +185,14 @@ public static void radixSort(int[] values, int passes) {
   'Counting Sort': {
     description: {
       runtime:
-        'O(n + c) where n is the number of elements and c is the size of the domain array.',
-      space: 'O(n + c) where c is the size of the domain array',
+        'O(n + c) where n is the number of elements and c is the domain range of the input data.',
+      space:
+        'O(n + c) where c is the size of the domain range of the input data',
       details: [
-        "Counting sort is a sorting algorithm that is used when we know the values of our data will be constrained to a relatively small domain. For example, if we wanted to sort a list of peoples' ages, we know that we could reasonably capture all ages by assuming every age is less than 150. That means, we only need a counting sort array c, of size 150. The trick is to hold a count at each array index that corresponds to a value. So if we had a list of ages [ 15, 26, 17, 90, 67, 20, 15 ], our counting sort array would contain a 1 at indexes 25, 16, 89, 66, and 19, and a 2 at 14 to correlate to the counts in the array. Lastly we just iterate back over our counting array (which is in order) to build our output.",
+        'Counting sort is a sorting algorithm that uses key counts for a discrete range of data. Unlike other sorting algorithms, counting sort is not comparison based. This algorithm serves as a helper or sub-routine in the Radix sort algorithm. This algorithm is good for input data with a relatively small range of values.',
+        "For example, if we wanted to sort a list of peoples' ages, we know that we could reasonably capture all ages by assuming every age is less than 150. That means, we only need a counting sort array c, of size 150. The trick is to hold a count at each array index (the key) that corresponds to a value. So if we had a list of ages [ 15, 26, 17, 90, 67, 20, 15 ], our counting sort array would contain a 1 at indexes 26, 17, 90, 67, and 20, and a 2 at 15 to correlate to the counts in the array. Lastly we just iterate back over our counting array (which is in order) to build our output.",
         'The pseudo code for this algorithm is quite simple containing two steps: 1. iterate over data, counting each value and storing it in our counting array. 2. Iterate over the counting array and build our sorted output.',
-        "Counting sort can be a fairly fast algorithm compared to bubble, selection, and insertion sorts. However, it's application is more unique and is only really applicable for numbers that are constrained to a small range or for characters, as it becomes more complicated to short strings of size greater than 1 as their content doesn't inherently align with index positions within a counting array.",
+        'Counting sort can be a speedy algorithm with the right conditions. Its application is unique and is only really applicable for numbers that are constrained to a small range or for characters. Counting sort should not be used for data which contains strings with lengths > 1.',
       ],
     },
     code: {
