@@ -82,3 +82,53 @@ exports.selectionSort = function selectionSort(data) {
 
   return { data, steps, raw, numSwaps };
 };
+
+exports.countingSort = function countingSort(data) {
+  let [raw, steps, numSwaps] = setup(data);
+
+  let counts = [];
+
+  if (typeof data[0] === 'number') {
+    data = countingSortNums(data, counts);
+  } else {
+    counts.length = 128;
+
+    for (let val of data) counts[val.charCodeAt(0) - 1]++;
+
+    let result = [];
+    let pos = 0;
+    for (let i = 0; i < data.length; i++) {
+      while (counts[pos] === undefined) {
+        pos++;
+      }
+
+      result.push(String.fromCharCode(pos + 1));
+      counts[pos]--;
+    }
+
+    data = result;
+  }
+
+  return data;
+};
+
+function countingSortNums(data, counts) {
+  let result = [];
+
+  for (let val of data) {
+    if (counts[val] === undefined) counts[val] = 1;
+    else counts[val]++;
+  }
+
+  let pos = 0;
+  for (let i = 0; i < data.length; i++) {
+    while (counts[pos] === undefined || counts[pos] === 0) {
+      pos++;
+    }
+
+    result.push(pos);
+    counts[pos]--;
+  }
+
+  return result;
+}
