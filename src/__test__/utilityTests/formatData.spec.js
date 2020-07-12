@@ -59,25 +59,33 @@ describe('Error checking for number types', () => {
     data = '56, 89 hello  , 12, 10';
 
     let result;
+    let errorOccured = false;
     try {
       result = formatData(data, 'number');
     } catch (err) {
+      errorOccured = true;
       expect(err.message).toBe(
         'Data is selected to be numbers, but we failed to convert value: hello'
       );
     }
+
+    expect(errorOccured).toBe(true);
   });
 
   it('Catches string in "number" data - 2', () => {
     data = 'salj 56, 89 12, 10';
 
     let result;
+    let errorOccured = false;
     try {
       result = formatData(data, 'number');
     } catch (err) {
+      errorOccured = true;
       expect(err.message).toBe(
         'Data is selected to be numbers, but we failed to convert value: salj'
       );
     }
+
+    expect(errorOccured).toBe(true);
   });
 });

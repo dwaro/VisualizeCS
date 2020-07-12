@@ -12,7 +12,7 @@ const formatData = (raw, type) => {
 
 function changeToNums(data) {
   return data.map((num) => {
-    let converted = Number.parseFloat(num);
+    const converted = Number.parseFloat(num);
     if (isNaN(converted)) {
       throw new Error(
         `Data is selected to be numbers, but we failed to convert value: ${num}`

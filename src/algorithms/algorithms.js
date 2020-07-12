@@ -12,10 +12,12 @@ function setup(data) {
  * @param {Array} data - the user's data to be sorted.
  */
 exports.bubbleSort = function bubbleSort(data) {
-  let [raw, steps, numSwaps] = setup(data);
+  const setupp = setup(data);
+  const [raw, steps] = setupp;
+  let numSwaps = setupp[2];
 
   for (let i = 0; i < data.length - 1; i++) {
-    let swaps = [];
+    const swaps = [];
     for (let j = 0; j < data.length - i - 1; j++) {
       if (data[j] > data[j + 1]) {
         swaps.push(
@@ -41,11 +43,13 @@ exports.bubbleSort = function bubbleSort(data) {
  * @param {Array} data - The user's data to be sorted.
  */
 exports.selectionSort = function selectionSort(data) {
-  let [raw, steps, numSwaps] = setup(data);
+  const setupp = setup(data);
+  const [raw, steps] = setupp;
+  let numSwaps = setupp[2];
 
   // n - 1 sweeps
   for (let i = data.length - 1; i > 0; i--) {
-    let swaps = [];
+    const swaps = [];
 
     // index of max element in unsorted portion of the array
     let max = 0;
@@ -84,55 +88,40 @@ exports.selectionSort = function selectionSort(data) {
 };
 
 exports.countingSort = function countingSort(data) {
-  let [raw, steps, numSwaps] = setup(data);
+  const setupp = setup(data);
+  const [raw, steps] = setupp;
+  let numSwaps = setupp[2];
 
-  let counts = [];
+  const counts = [];
+  const isNumber = typeof data[0] === 'number';
 
-  if (typeof data[0] === 'number') {
-    data = countingSortNums(data, counts);
+  if (isNumber) {
+    for (const val of data) {
+      if (counts[val] === undefined) counts[val] = 1;
+      else counts[val]++;
+    }
   } else {
-    counts.length = 128;
-
-    for (let val of data) {
+    for (const val of data) {
       if (counts[val.charCodeAt(0)] === undefined)
         counts[val.charCodeAt(0)] = 1;
       else counts[val.charCodeAt(0)]++;
     }
-
-    let result = [];
-    let pos = 0;
-    for (let i = 0; i < data.length; i++) {
-      while (counts[pos] === undefined || counts[pos] === 0) {
-        pos++;
-      }
-
-      result.push(String.fromCharCode(pos));
-      counts[pos]--;
-    }
-
-    data = result;
   }
 
-  return data;
-};
-
-function countingSortNums(data, counts) {
-  let result = [];
-
-  for (let val of data) {
-    if (counts[val] === undefined) counts[val] = 1;
-    else counts[val]++;
-  }
-
+  const result = [];
   let pos = 0;
   for (let i = 0; i < data.length; i++) {
     while (counts[pos] === undefined || counts[pos] === 0) {
       pos++;
     }
 
-    result.push(pos);
+    if (isNumber) result.push(pos);
+    else result.push(String.fromCharCode(pos));
+
     counts[pos]--;
   }
 
-  return result;
-}
+  data = result;
+
+  return data;
+};
