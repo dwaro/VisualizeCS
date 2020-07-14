@@ -10024,7 +10024,7 @@ hr {
 
 .step-appear.step-appear-active {
   opacity: 1;
-  transition: opacity 900ms linear;
+  transition: opacity 600ms linear;
 }
 
 .step-exit {
@@ -10033,7 +10033,7 @@ hr {
 
 .step-exit.step-exit-active {
   opacity: 0;
-  transition: opacity 900ms linear;
+  transition: opacity 600ms linear;
 }
 
 .step-exit-done {
@@ -10046,7 +10046,7 @@ hr {
 
 .step-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 900ms linear;
+  transition: opacity 600ms linear;
 }
 
 /*# sourceMappingURL=index.css.map */

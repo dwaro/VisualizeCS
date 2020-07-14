@@ -235,4 +235,26 @@ public static void radixSort(int[] values, int passes) {
 }`,
     },
   },
+  Quicksort: {
+    description: {
+      runtime: 'average: O( n * log(n) ), worst case: O( n² )',
+      space: 'O(log(n))',
+      details: ['Details to come for Quicksort Algorithm'],
+    },
+    code: {
+      java: 'Java code to come for Quicksort',
+      javascript: `JavaScript Code to come for Quicksort`,
+    },
+  },
+  'Insertion Sort': {
+    description: {
+      runtime: 'O( n² )',
+      space: 'O(1)',
+      details: ['Details to come for Insertion Sort Algorithm'],
+    },
+    code: {
+      java: 'Java code to come for Insertion Sort',
+      javascript: `JavaScript Code to come for Insertion Sort`,
+    },
+  },
 };
