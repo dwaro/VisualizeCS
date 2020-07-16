@@ -6,6 +6,8 @@ exports.delegate = function delegate(algorithm, data) {
       return algorithms.bubbleSort(data);
     case 'Selection Sort':
       return algorithms.selectionSort(data);
+    case 'Counting Sort':
+      return algorithms.countingSort(data);
     default:
       return '';
   }

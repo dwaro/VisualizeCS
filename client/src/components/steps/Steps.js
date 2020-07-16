@@ -21,9 +21,11 @@ const Steps = (props) => {
           </span>
           : <span className="pink-text">[</span>{' '}
           {props.sortedData.raw.join(', ')} <span className="pink-text">]</span>
-          <ul>
-            <li>Total number of swaps: {props.sortedData.numSwaps}</li>
-          </ul>
+          {props.sortedData.numSwaps !== -1 ? (
+            <ul>
+              <li>Total number of swaps: {props.sortedData.numSwaps}</li>
+            </ul>
+          ) : null}
         </div>
       </CSSTransition>
       <TransitionGroup>

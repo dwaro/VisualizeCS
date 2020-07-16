@@ -90,7 +90,6 @@ exports.selectionSort = function selectionSort(data) {
 exports.countingSort = function countingSort(data) {
   const setupp = setup(data);
   const [raw, steps] = setupp;
-  let numSwaps = setupp[2];
 
   const counts = [];
   const isNumber = typeof data[0] === 'number';
@@ -108,6 +107,10 @@ exports.countingSort = function countingSort(data) {
     }
   }
 
+  const swaps = [];
+  swaps.push(['The Counting Sort Array is created.']);
+  steps.push([swaps, counts.slice()]);
+
   const result = [];
   let pos = 0;
   for (let i = 0; i < data.length; i++) {
@@ -121,7 +124,10 @@ exports.countingSort = function countingSort(data) {
     counts[pos]--;
   }
 
-  data = result;
+  swaps[0] = ['The Sorted Output array'];
+  steps.push([swaps, result]);
 
-  return data;
+  data = result;
+  const numSwaps = -1;
+  return { data, steps, raw, numSwaps };
 };
