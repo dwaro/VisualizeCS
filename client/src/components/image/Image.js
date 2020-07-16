@@ -1,6 +1,7 @@
 import React from 'react';
 import BubbleSort from '../../data/images/bubbleSort.png';
 import SelectionSort from '../../data/images/selectionSort.png';
+import CountingSort from '../../data/images/countingSort.png';
 import Default from '../../data/images/default.png';
 
 /**
@@ -14,6 +15,8 @@ const getImage = (imageDescription) => {
       return BubbleSort;
     case 'Selection Sort':
       return SelectionSort;
+    case 'Counting Sort':
+      return CountingSort;
     default:
       return Default;
   }
