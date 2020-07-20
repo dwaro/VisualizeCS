@@ -51,34 +51,6 @@ describe('Insertion Sort algorithm returns correct sorted data', () => {
     data.sort();
     expect(result.data).toEqual(data);
   });
-
-  it('Sorting 9,999 elements', () => {
-    data = buildData(9999);
-    const result = insertionSort(data);
-    data.sort();
-    expect(result.data).toEqual(data);
-  });
-
-  it('Sorting 10,002 elements', () => {
-    data = buildData(10002);
-    const result = insertionSort(data);
-    data.sort();
-    expect(result.data).toEqual(data);
-  });
-
-  it('Sorting 99,999 elements', () => {
-    data = buildData(99999);
-    const result = insertionSort(data);
-    data.sort();
-    expect(result.data).toEqual(data);
-  });
-
-  it('Sorting 100,002 elements', () => {
-    data = buildData(100002);
-    const result = insertionSort(data);
-    data.sort();
-    expect(result.data).toEqual(data);
-  });
 });
 
 describe('Insertion Sort sorted string data', () => {

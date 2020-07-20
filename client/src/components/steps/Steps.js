@@ -45,7 +45,7 @@ const Steps = (props) => {
                 <h3 className="blue-text">Pass {stepCount}</h3>
                 {step[0].length === 0 ? (
                   <div style={{ paddingLeft: 40, marginBottom: '1rem' }}>
-                    No more swaps
+                    No swaps
                   </div>
                 ) : (
                   <ul>

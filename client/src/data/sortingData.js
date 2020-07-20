@@ -310,7 +310,19 @@ private static int getMax(int[] intData) {
     },
     code: {
       java: 'Java code to come for Insertion Sort',
-      javascript: `JavaScript Code to come for Insertion Sort`,
+      javascript: `function insertionSort(data) {
+  // n - 1 passes
+  for (let i = 1; i < data.length; i++) {
+    let pos = i;
+
+    while (pos >= 1 && data[pos] < data[pos - 1]) {
+      const tmp = data[pos];
+      data[pos] = data[pos - 1];
+      data[pos - 1] = tmp;
+      pos--;
+    }
+  }
+}`,
     },
   },
 };

@@ -8,6 +8,8 @@ exports.delegate = function delegate(algorithm, data) {
       return algorithms.selectionSort(data);
     case 'Counting Sort':
       return algorithms.countingSort(data);
+    case 'Insertion Sort':
+      return algorithms.insertionSort(data);
     default:
       return '';
   }

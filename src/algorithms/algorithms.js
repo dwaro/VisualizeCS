@@ -133,17 +133,37 @@ exports.countingSort = function countingSort(data) {
 };
 
 exports.insertionSort = function insertionSort(data) {
+  const setupp = setup(data);
+  const [raw, steps] = setupp;
+
   // n - 1 passes
   for (let i = 1; i < data.length; i++) {
+    const swaps = [];
+
     let pos = i;
+
+    const val = data[pos];
+    const start = pos;
+    let end = -1;
 
     while (pos >= 1 && data[pos] < data[pos - 1]) {
       const tmp = data[pos];
       data[pos] = data[pos - 1];
       data[pos - 1] = tmp;
+      end = pos - 1;
       pos--;
     }
+
+    if (end !== -1)
+      swaps.push(
+        `Insert the value ${val} at index [${start}] to index [${end}]`
+      );
+
+    const tmpData = data.slice();
+    const step = [swaps, tmpData];
+    steps.push(step);
   }
 
-  return { data };
+  const numSwaps = -1;
+  return { data, steps, raw, numSwaps };
 };
