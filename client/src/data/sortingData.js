@@ -303,7 +303,10 @@ private static int getMax(int[] intData) {
     description: {
       runtime: 'O( n² )',
       space: 'O(1)',
-      details: ['Details to come for Insertion Sort Algorithm'],
+      details: [
+        'The idea of insertion sort is to keep a sorted section of the array at the front of the array, and increase the sorted section\'s size by 1 after each pass. We start at index 1, with index 0 containing the "sorted" array. We then insert the value at index 1 into the sorted section of the array. We do this by bubbling backwards, until the element fits into its correct position.',
+        'Insertion sort is a stable sorting algorithm, and sorts the data in place, resulting with constant memory.',
+      ],
     },
     code: {
       java: 'Java code to come for Insertion Sort',

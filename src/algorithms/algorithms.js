@@ -131,3 +131,19 @@ exports.countingSort = function countingSort(data) {
   const numSwaps = -1;
   return { data, steps, raw, numSwaps };
 };
+
+exports.insertionSort = function insertionSort(data) {
+  // n - 1 passes
+  for (let i = 1; i < data.length; i++) {
+    let pos = i;
+
+    while (pos >= 1 && data[pos] < data[pos - 1]) {
+      const tmp = data[pos];
+      data[pos] = data[pos - 1];
+      data[pos - 1] = tmp;
+      pos--;
+    }
+  }
+
+  return { data };
+};
